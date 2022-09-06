@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add a Class
+{% endblock %}
+
+{% block main %}
+    <h1>Add a Class</h1>
+    <br>
+    <p>Enter the name of the class and the weighted percentage of each field.</p>
+    <form action="/add" method="post">
+        <div class="mb-3">
+            <input autofocus required class="form-control mx-auto w-auto" name="class_name" type="text" placeholder="Class Name" autocomplete="off">
+        </div>
+        <br>
+        <p>Enter below the name of each class category and its percentage of your grade (i.e. tests, 60%)
+        <br>
+        Fields must total to 100 and all values must be integers greater than 0.
+        <br>
+        You may add up to 9 categories and must include at least 1.</p>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" required name="category1_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" class="form-control mx-auto w-auto" required name="category1" type="number" placeholder="Category Percentage">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" style="display:none;" id="1" class="form-control mx-auto w-auto" name="category2_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" style="display:none;" id="2" class="form-control mx-auto w-auto" name="category2" type="number" placeholder="Category Percentage">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" style="display:none;" id="3" class="form-control mx-auto w-auto" name="category3_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" style="display:none;" id="4" class="form-control mx-auto w-auto" name="category3" type="number" placeholder="Category Percentage">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" style="display:none;" id="5" class="form-control mx-auto w-auto" name="category4_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" style="display:none;" id="6" class="form-control mx-auto w-auto" name="category4" type="number" placeholder="Category Percentage">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" style="display:none;" id="7" class="form-control mx-auto w-auto" name="category5_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" style="display:none;" id="8" class="form-control mx-auto w-auto" name="category5" type="number" placeholder="Category Percentage">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" style="display:none;" id="9" class="form-control mx-auto w-auto" name="category6_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" style="display:none;" id="10" class="form-control mx-auto w-auto" name="category6" type="number" placeholder="Category Percentage">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" style="display:none;" id="11" class="form-control mx-auto w-auto" name="category7_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" style="display:none;" id="12" class="form-control mx-auto w-auto" name="category7" type="number" placeholder="Category Percentage">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" style="display:none;" id="13" class="form-control mx-auto w-auto" name="category8_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" style="display:none;" id="14" class="form-control mx-auto w-auto" name="category8" type="number" placeholder="Category Percentage">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" style="display:none;" id="15" class="form-control mx-auto w-auto" name="category9_name" type="text" placeholder="Category Name">
+            <input autocomplete="off" style="display:none;" id="16" class="form-control mx-auto w-auto" name="category9" type="number" placeholder="Category Percentage">
+        </div>
+        <div id="alert_container" style="display:none;" class="alert alert-dismissible alert-warning">
+            <button id="alert_close" type="button" class="btn-close"></button>
+            <h4 class="alert-heading">Stop!</h4>
+            <p class="mb-0"><span id="alert"></span></p>
+        </div>
+        <button id="add" type="button" class="btn btn-success mb-3">Add Another Category</button>
+        <br>
+        <button id="remove" type="button" class="btn btn-danger mb-3">Remove Last Category</button>
+        <br>
+        <button class="btn btn-primary mt-3" type="submit">Submit Class</button>
+    </form>
+{% endblock %}

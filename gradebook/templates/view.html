@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Assignments
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-3">Select A Class To View</h1>
+    <form action="/view" method="post">
+        <select name="view_class" class="mb-3">
+            <option disabled selected>Choose A Class</option>
+            {% for class in classes %}
+                <option>{{class.name}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button class="btn btn-primary" type="submit">Choose Class</button>
+    </form>
+{% endblock %}

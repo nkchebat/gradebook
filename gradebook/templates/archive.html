@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Archive a Class
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-3">Archive a Class</h1>
+    <form action="/archive" method="post">
+        <select name="archive_class" class="mb-3">
+            <option disabled selected>Choose A Class To Archive</option>
+            {% for class in classes %}
+            <option>{{class.name}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button class="btn btn-primary" type="submit">Archive</button>
+    </form>
+{% endblock %}

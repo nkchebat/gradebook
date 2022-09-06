@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Past Grades
+{% endblock %}
+
+{% block main %}
+    <h1>{{name}}'s Past Grades</h1>
+    <table class="table table-hover">
+        <thead>
+            <th scope="col">Class</th>
+            <th scope="col">Grade</th>
+        </thead>
+        <tbody>
+            {% for class in classes %}
+            <tr class="table-primary">
+                <td>{{class.name}}</td>
+                <td>{{class.grade | grade}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

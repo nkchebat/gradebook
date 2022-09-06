@@ -1,0 +1,16 @@
+input
+{
+    text-align: center;
+}
+
+select
+{
+    text-align: center;
+    width: 250px;
+}
+
+
+.active:hover
+{
+    font-weight: bold;
+}

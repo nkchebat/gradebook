@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Current Grades
+{% endblock %}
+
+{% block main %}
+    <h1>{{name}}'s Grades</h1>
+    <p>The grades below assume 100% in all class categories that do not have assignments yet</p>
+    <br>
+    <table class="table table-hover">
+        <thead>
+            <th scope="col">Class</th>
+            <th scope="col">Grade</th>
+        </thead> 
+        <tbody>
+            {% for class in classes %}
+            <tr class="table-primary">
+                <td>{{class.name}}</td>
+                <td>{{class.grade | grade}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

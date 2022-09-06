@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View Assignments
+{% endblock %}
+
+{% block main %}
+    <h1>{{name}} Assignments</h1>
+    <br>
+    <table class="table table-hover">
+        <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Points Earned</th>
+            <th scope="col">Points Available</th>
+            <th scope="col">Percentage</th>
+        </thead>
+        <tbody>
+            {% for assignment in assignments %}
+            <tr class="table-primary">
+                <td>{{assignment.name}}</td>
+                <td>{{assignment.type}}</td>
+                <td>{{assignment.score_numerator}}</td>
+                <td>{{assignment.score_denominator}}</td>
+                <td>{{((assignment.score_numerator / assignment.score_denominator) * 100) | grade}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

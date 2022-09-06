@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add An Assignment
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-3">Choose A Class To Add An Assignment To</h1>
+    <form action="/assignment" method="post">
+        <select name="assignment_class" class="mb-3">
+            <option disabled selected>Choose A Class</option>
+            {% for class in classes %}
+                <option>{{class.name}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button class="btn btn-primary" type="submit">Choose Class</button>
+    </form>
+{% endblock %}

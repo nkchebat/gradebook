@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Drop An Assignment
+{% endblock %}
+
+{% block main %}
+    <h1 class="mb-3">Drop An Assignment From {{drop_class}}</h1>
+    <form action="/dropped" method="post">
+        <input name="selected_class" type="hidden" value="{{selected_class}}">
+        <select name="assignment" class="mb-3">
+            <option disabled selected>Choose An Assignment</option>
+            {% for assignment in assignments %}
+                    <option>{{assignment.name}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button class="btn btn-primary" type="submit">Drop Assignment</button>
+    </form>
+{% endblock %}
